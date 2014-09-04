@@ -52,7 +52,7 @@ p {
 }
 
 /* Links */
-a {
+.navbar-default a {
     color: #3498db;
     word-wrap: break-word;
 
@@ -70,8 +70,8 @@ a:focus {
     outline: 0;
 }
 
-a:before,
-a:after {
+.navbar-default a:before,
+.navbar-default a:after {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
     -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -89,8 +89,8 @@ a:after {
 }
 
 .navbar-default {
-	background-color: #002035;
-	border-color: transparent;
+	background-color: #181818;
+	border-color: #151515;
     height: 70px;
     padding-top: 10px;
 }
@@ -121,7 +121,7 @@ a:after {
 
 i {
 	margin: 8px;
-	color: #002035; 
+	color: #181818; 
 }
 
 

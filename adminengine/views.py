@@ -22,13 +22,22 @@ class LoggedInMixin(object):
 
 
 
-class DashboardView(LoggedInMixin, View):
-
-    template_name = 'dashboard.html'
+class TrafficView(LoggedInMixin, View):
     
     def get(self, request):
-    	is_athlon = request.user.groups.filter(name='athlon')
-    	is_calpolyrec = request.user.groups.filter(name='calpolyrec')
-    	is_kennedyfitness = request.user.groups.filter(name='kennedyfitness')
 
-        return render(request,'dashboard.html', {'is_athlon': is_athlon, 'is_calpolyrec': is_calpolyrec, 'is_kennedyfitness': is_kennedyfitness});
+        # store the user's group in a variable
+    	user_group = request.user.groups.all()[0].name
+
+        return render(request,'adminhome.html', {'user_group': user_group});
+
+
+
+class MembershipView(LoggedInMixin, View):
+    
+    def get(self, request):
+
+        # store the user's group in a variable
+    	user_group = request.user.groups.all()[0].name
+
+        return render(request,'adminmembership.html', {'user_group': user_group});

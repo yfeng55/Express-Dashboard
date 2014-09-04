@@ -6,3 +6,79 @@
 	margin-right:30px;
 	color:white;
 }
+
+.phonescreen{
+	margin-top:50px;
+	margin-bottom:50px;
+	padding-left:100px;
+}
+
+.phonedescription{
+	margin-top:90px;
+}
+
+.phonedescription h4{
+	font-size: 28px;
+	color: #151515;
+}
+.phonedescription p{
+	margin-bottom: 50px;
+}
+
+.footer{
+	margin-top:35px;
+	margin-bottom:35px;
+}
+
+.appstorelink{
+	margin-right:10px;
+	margin-top:20px;
+}
+
+.loginfield{
+	width:95%;
+	margin-bottom:20px;
+}
+
+
+/*SOCIAL MEDIA BUTTONS*/
+.socialmedia{
+	display:inline-block;
+	width: 29px;
+	height: 30px;
+	margin-left:2px;
+	text-indent:-9999px;
+	margin-right:5px;
+}
+.facebook{
+	background: url('../img/socialmedia_icons.png') no-repeat -17px -179px;
+	width: 27px;
+	height: 27px;
+}
+.facebook:hover{
+	background: url('../img/socialmedia_icons.png') no-repeat -17px -16px;
+	width: 27px;
+	height: 27px;
+}
+
+.twitter{
+	background: url('../img/socialmedia_icons.png') no-repeat -47px -179px;
+	width: 27px;
+	height: 27px;
+}
+.twitter:hover{
+	background: url('../img/socialmedia_icons.png') no-repeat -47px -16px;
+	width: 27px;
+	height: 27px;
+}
+
+.linkedin{
+	background: url('../img/socialmedia_icons.png') no-repeat -168px -179px;
+	width: 27px;
+	height: 27px;
+}
+.linkedin:hover{
+	background: url('../img/socialmedia_icons.png') no-repeat -168px -16px;
+	width: 27px;
+	height: 27px;
+}
