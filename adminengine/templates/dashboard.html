@@ -1,0 +1,25 @@
+{% extends "includes/base.html" %}
+
+{% block content %}
+
+<div class="container">
+	<div class="content">
+
+		{% if is_athlon %} 
+			THIS IS THE DASHBOARD FOR ATHLON
+
+		{% elif is_calpolyrec %}
+			THIS IS THE DASHBOARD FOR CAL POLY REC
+
+		{% elif is_kennedyfitness %}
+			THIS IS THE DASHBOARD FOR KENNEDY FITNESS
+
+		{% else %}
+			ADMIN USER SCREEN
+
+		{% endif %}
+
+	</div>
+</div>
+
+{% endblock %}

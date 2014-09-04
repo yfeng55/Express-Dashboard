@@ -1,0 +1,70 @@
+
+{% extends "includes/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="headerwrap">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6">
+         <h1>Automated Check-in<br/>for Ftiness Centers</h1>
+         <form class="form-inline" role="form">
+           <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+          </div>
+          <button type="submit" class="btn btn-warning btn-lg">Request Demo</button>
+        </form>					
+      </div>
+
+      <div class="col-lg-6">
+        <!-- <img class="img-responsive" src="{% static "img/ipad-hand.png" %}" alt=""> -->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+ <div class="row mt centered">
+  <div class="col-lg-6 col-lg-offset-3">
+   <h1>A Hassle-free Check-In System</h1>
+   <h3>Express allows your members to check-in by walking through the door</h3>
+ </div>
+</div>
+
+<div class="row mt centered">
+  <div class="col-lg-4">
+   <img src="{% static "img/ser01.png" %}" width="180" alt="">
+   <h4>Real-Time Traffic Updates</h4>
+   <p>Your gym members will get real-time traffic stats for your gym, reducing crowdedness during peak hours</p>
+ </div>
+
+ <div class="col-lg-4">
+   <img src="{% static "img/ser02.png" %}" width="180" alt="">
+   <h4>Valuable Membership Data</h4>
+   <p>We'll integrate our admin application with your existing systems to provide valuable traffic and membership insights to managers</p>
+
+ </div>
+
+ <div class="col-lg-4">
+   <img src="{% static "img/ser03.png" %}" width="180" alt="">
+   <h4>Gym Member Engagement</h4>
+   <p>Users can use the mobile app to track visits over time and create personal milestones</p>
+
+ </div>
+</div>
+
+</div>
+
+
+<div class="container">
+  <hr>
+  <p class="centered">Copyright © 2014 Express, All rights reserved</p>
+</div>
+
+{% endblock %}
+
