@@ -41,15 +41,26 @@ ROOT_URLCONF = 'expresscheckin.urls'
 
 WSGI_APPLICATION = 'expresscheckin.wsgi.application'
 
+# DATABASES = { 
+#     'default': { 
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mydb',
+#         'USER': 'yijiefeng',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#     } 
+# }
+
 DATABASES = { 
     'default': { 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'yijiefeng',
-        'PASSWORD': 'password',
+        'NAME': 'expresslocal',
+        'USER': 'postgres',
+        'PASSWORD': 'UykQEEH5',
         'HOST': 'localhost',
     } 
 }
+
 
 # Internationalization
 
@@ -64,9 +75,10 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+# Parse database configuration from $DATABASE_URL if running on heroku
+if os.environ.get('DATABASE_URL', None):
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
