@@ -8,6 +8,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic.base import View
 from django.contrib.auth.models import User, Group
 
+from firebase import firebase
 
 
 def index(request):
@@ -29,7 +30,10 @@ class TrafficView(LoggedInMixin, View):
         # store the user's group in a variable
     	user_group = request.user.groups.all()[0].name
 
-        return render(request,'adminhome.html', {'user_group': user_group});
+        # get data from firebase
+        visits = retrieveData(firebase, user_group);
+
+        return render(request,'adminhome.html', {'user_group': user_group, 'visits': visits});
 
 
 
@@ -41,3 +45,10 @@ class MembershipView(LoggedInMixin, View):
     	user_group = request.user.groups.all()[0].name
 
         return render(request,'adminmembership.html', {'user_group': user_group});
+
+
+# Firebase Data Retrieve
+def retrieveData(firebase, group):
+    firebase = firebase.FirebaseApplication('https://hellobeacon.firebaseio.com', None)
+    result = firebase.get('/Gyms/' + group + '/Visits/', None)
+    return result;

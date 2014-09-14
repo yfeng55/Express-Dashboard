@@ -18,6 +18,11 @@
     <link href="{% static 'css/dash.css' %}" rel="stylesheet">    
     <link href="{% static 'font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'js/highcharts.js' %}"></script>
+    
+    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -77,16 +82,13 @@
                         <a href="{% url 'membership' %}"><i class="fa fa-fw fa-bar-chart-o"></i> Membership Summary</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-table"></i> Reports</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Reports <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">Report 1</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#">Report 2</a>
                             </li>
                         </ul>
                     </li>
@@ -114,14 +116,44 @@
     <!-- /#wrapper -->
     
 
-    <script src="{% static 'js/jquery-1.11.0.js' %}"></script>
+    <script>
+    jQuery( document ).ready(function( $ ) {
+    $(function () { 
+        $('#chart1').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Summary for September 7 - September 14, 2014'
+            },
+            xAxis: {
+                categories: ['5:00 AM', '6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM']
+            },
+            yAxis: {
+                title: {
+                    text: 'Visits'
+                }
+            },
+            series: [{
+                name: 'Last Week',
+                data: [5, 10, 14, 7, 9, 13, 23, 30, 32, 36, 38, 39, 27, 26, 25, 18]
+            }, {
+                name: 'This Week',
+                data: [5, 15, 19, 20, 28, 25, 17, 15, 27, 30, 28, 32, 30, 26, 27, 20]
+            }]
+        });
+    });
+    });
+
+    </script>
+
+
+
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <script src="{% static 'js/dash.js' %}"></script>
 
-    <script src="{% static 'js/plugins/morris/raphael.min.js' %}"></script>
-    <script src="{% static 'js/plugins/morris/morris.min.js' %}"></script>
-    <script src="{% static 'js/plugins/morris/morris-data.js' %}"></script>
+    
 
 </body>
 
