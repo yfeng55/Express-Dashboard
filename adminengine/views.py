@@ -30,10 +30,10 @@ class TrafficView(LoggedInMixin, View):
         # store the user's group in a variable
     	user_group = request.user.groups.all()[0].name
 
-        # get data from firebase
-        visits = retrieveData(firebase, user_group);
+        # get visits data from firebase
+        visits = retrieveVisits(firebase, user_group);
 
-        return render(request,'adminhome.html', {'user_group': user_group, 'visits': visits});
+        return render(request,'adminhome.html', {'request':request, 'user_group': user_group, 'visits': visits});
 
 
 
@@ -44,11 +44,20 @@ class MembershipView(LoggedInMixin, View):
         # store the user's group in a variable
     	user_group = request.user.groups.all()[0].name
 
-        return render(request,'adminmembership.html', {'user_group': user_group});
+        # get users data from firebase
+        users = retrieveUsers(firebase, user_group);
+
+        return render(request,'adminmembership.html', {'request':request, 'user_group': user_group, 'users': users});
 
 
-# Firebase Data Retrieve
-def retrieveData(firebase, group):
+# Firebase - Retrieve Visits
+def retrieveVisits(firebase, group):
     firebase = firebase.FirebaseApplication('https://hellobeacon.firebaseio.com', None)
     result = firebase.get('/Gyms/' + group + '/Visits/', None)
+    return result;
+
+# Firebase - Retrieve Users
+def retrieveUsers(firebase, group):
+    firebase = firebase.FirebaseApplication('https://hellobeacon.firebaseio.com', None)
+    result = firebase.get('/Gyms/' + group + '/Users/', None)
     return result;

@@ -1,10 +1,8 @@
+
+// extends the height of the content area (area with the white background) to match the current height of the window
 $(function() {
-
-	// alert($('#page-wrapper').height());
-	// alert($(window).height());
-
-	// $('#page-wrapper').height($(window).height() - 90);
 
 	$('#page-wrapper').css("min-height", $(window).height() - 50);
 
 });
+

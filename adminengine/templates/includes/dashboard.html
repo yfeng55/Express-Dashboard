@@ -73,14 +73,17 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    
 
-                    <li class="active">
+                    {% url 'dashboard' as url %}
+                    <li {% if request.path == url %} class="active"{% endif %}>
                         <a href="{% url 'dashboard' %}"><i class="fa fa-fw fa-dashboard"></i> Traffic Summary</a>
                     </li>
-                    <li>
+
+                    {% url 'membership' as url %}
+                    <li {% if request.path == url %} class="active"{% endif %}>
                         <a href="{% url 'membership' %}"><i class="fa fa-fw fa-bar-chart-o"></i> Membership Summary</a>
                     </li>
+
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Reports <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
@@ -92,6 +95,7 @@
                             </li>
                         </ul>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
